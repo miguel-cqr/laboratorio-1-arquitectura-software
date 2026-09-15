@@ -34,10 +34,10 @@ La aplicación permite:
 
 ```text
 laboratorio-1-arquitectura/
-├── backend/
+├── lab1arq/
 │   └── Aplicación Spring Boot
 │
-├── frontend/
+├── UdeaBank/
 │   └── Aplicación React
 │
 ├── .gitignore
@@ -49,7 +49,7 @@ laboratorio-1-arquitectura/
 Ingresar a la carpeta del backend:
 
 ```bash
-cd backend
+cd lab1arq
 ```
 
 Ejecutar la aplicación mediante Maven:
@@ -75,7 +75,7 @@ http://localhost:8088
 Ingresar a la carpeta del frontend:
 
 ```bash
-cd frontend
+cd UdeaBank
 ```
 
 Instalar las dependencias:
