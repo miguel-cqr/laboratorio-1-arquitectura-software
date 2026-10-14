@@ -187,4 +187,43 @@ class TransactionServiceTest {
         assertEquals("222", result.get(0).getReceiverAccountNumber());
         assertEquals(25.0, result.get(0).getAmount());
     }
+    @Test
+    void transferMoneyRejectsNullSenderAccount() {
+        TransactionDTO dto = new TransactionDTO();
+        dto.setSenderAccountNumber(null);
+        dto.setReceiverAccountNumber("2002");
+        dto.setAmount(100.0);
+
+        IllegalArgumentException exception = assertThrows(
+                IllegalArgumentException.class,
+                () -> transactionService.transferMoney(dto)
+        );
+
+        assertEquals(
+                "Los números de cuenta del remitente y receptor son obligatorios.",
+                exception.getMessage()
+        );
+
+        verifyNoInteractions(customerRepository, transactionRepository);
+    }
+
+    @Test
+    void transferMoneyRejectsNullReceiverAccount() {
+        TransactionDTO dto = new TransactionDTO();
+        dto.setSenderAccountNumber("1001");
+        dto.setReceiverAccountNumber(null);
+        dto.setAmount(100.0);
+
+        IllegalArgumentException exception = assertThrows(
+                IllegalArgumentException.class,
+                () -> transactionService.transferMoney(dto)
+        );
+
+        assertEquals(
+                "Los números de cuenta del remitente y receptor son obligatorios.",
+                exception.getMessage()
+        );
+
+        verifyNoInteractions(customerRepository, transactionRepository);
+    }
 }
