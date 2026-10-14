@@ -1,6 +1,6 @@
 package com.udea.lab1arq.service;
 
-import com.udea.lab1arq.DTO.TransactionDTO;
+import com.udea.lab1arq.dto.TransactionDTO;
 import com.udea.lab1arq.entity.Customer;
 import com.udea.lab1arq.entity.Transaction;
 import com.udea.lab1arq.repository.CustomerRepository;
