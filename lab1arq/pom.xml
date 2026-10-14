@@ -184,8 +184,11 @@
                     </execution>
                 </executions>
             </plugin>
-            
+
         </plugins>
+
+        <finalName>lab1arq</finalName>
+
     </build>
 
 </project>

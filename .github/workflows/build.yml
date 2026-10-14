@@ -125,4 +125,14 @@ jobs:
           #Set artifact name
           name: artifact
           #From this path
-          path: target/lab1arq-0.0.1-SNAPSHOT.jar
+          path: target/lab1arq.jar
+
+      - name: Build & push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v6
+        with:
+          image: miguelcqra/lab1arq
+          tags: latest
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
