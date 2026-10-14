@@ -1,6 +1,6 @@
 package com.udea.lab1arq.mapper;
 
-import com.udea.lab1arq.DTO.CustomerDTO;
+import com.udea.lab1arq.dto.CustomerDTO;
 import com.udea.lab1arq.entity.Customer;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

@@ -1,4 +1,4 @@
-package com.udea.lab1arq.DTO;
+package com.udea.lab1arq.dto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,9 +9,6 @@ public class TransferRequestDTO {
     private String senderAccountNumber;
     private String receiverAccountNumber;
     private Double amount;
-
-    public TransferRequestDTO() {
-    }
 
     public String getSenderAccountNumber() {
         return senderAccountNumber;

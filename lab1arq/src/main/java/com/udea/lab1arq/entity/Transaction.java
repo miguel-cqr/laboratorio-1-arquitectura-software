@@ -1,11 +1,11 @@
 package com.udea.lab1arq.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 @Entity
 @Table(name = "transactions")
@@ -25,7 +25,7 @@ public class Transaction {
     @Column(nullable = false)
     private Double amount;
 
-    private LocalDateTime timestamp = LocalDateTime.now();
+    private LocalDateTime timestamp = LocalDateTime.now(ZoneId.of("America/Bogota"));
 
     public Transaction() {
     }

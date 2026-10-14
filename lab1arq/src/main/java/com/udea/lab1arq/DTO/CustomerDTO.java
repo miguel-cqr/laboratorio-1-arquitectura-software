@@ -1,4 +1,4 @@
-package com.udea.lab1arq.DTO;
+package com.udea.lab1arq.dto;
 
 import lombok.Getter;
 import lombok.Setter;

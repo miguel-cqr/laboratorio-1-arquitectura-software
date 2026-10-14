@@ -1,7 +1,7 @@
 package com.udea.lab1arq.controller;
 
 
-import com.udea.lab1arq.DTO.CustomerDTO;
+import com.udea.lab1arq.dto.CustomerDTO;
 import com.udea.lab1arq.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,8 +13,12 @@ import java.util.List;
 @RequestMapping("/api/customers")
 public class CustomerController {
 
-    @Autowired
     private CustomerService customerFacade;
+
+    @Autowired
+    public CustomerController(CustomerService customerFacade) {
+        this.customerFacade = customerFacade;
+    }
 
     //Obtener todos los clientes
     @GetMapping
