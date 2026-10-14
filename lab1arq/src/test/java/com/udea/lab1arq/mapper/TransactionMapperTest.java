@@ -1,6 +1,6 @@
 package com.udea.lab1arq.mapper;
 
-import com.udea.lab1arq.DTO.TransactionDTO;
+import com.udea.lab1arq.dto.TransactionDTO;
 import com.udea.lab1arq.entity.Transaction;
 import org.junit.jupiter.api.Test;
 

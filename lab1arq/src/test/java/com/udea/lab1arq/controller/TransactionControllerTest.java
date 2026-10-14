@@ -1,6 +1,6 @@
 package com.udea.lab1arq.controller;
 
-import com.udea.lab1arq.DTO.TransactionDTO;
+import com.udea.lab1arq.dto.TransactionDTO;
 import com.udea.lab1arq.service.TransactionService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -21,7 +21,7 @@ class TransactionControllerTest {
     @BeforeEach
     void setUp() {
         transactionService = mock(TransactionService.class);
-        transactionController = new TransactionController();
+        transactionController = new TransactionController(transactionService);
 
         ReflectionTestUtils.setField(
                 transactionController, "transactionService",

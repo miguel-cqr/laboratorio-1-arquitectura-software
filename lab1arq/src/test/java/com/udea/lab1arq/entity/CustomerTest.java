@@ -63,7 +63,7 @@ class CustomerTest {
                 1L, "1001", "Ana", "Lopez", 500.0
         );
 
-        assertNotEquals(customer, null);
+        assertNotEquals(null, customer);
     }
 
     @Test
@@ -72,7 +72,7 @@ class CustomerTest {
                 1L, "1001", "Ana", "Lopez", 500.0
         );
 
-        assertNotEquals(customer, "Customer");
+        assertNotEquals("Customer", customer);
     }
 
     @Test

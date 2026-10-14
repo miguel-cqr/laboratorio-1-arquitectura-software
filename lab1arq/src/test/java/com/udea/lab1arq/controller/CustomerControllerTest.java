@@ -1,6 +1,6 @@
 package com.udea.lab1arq.controller;
 
-import com.udea.lab1arq.DTO.CustomerDTO;
+import com.udea.lab1arq.dto.CustomerDTO;
 import com.udea.lab1arq.service.CustomerService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,7 +20,7 @@ class CustomerControllerTest {
     @BeforeEach
     void setUp() {
         customerService = mock(CustomerService.class);
-        customerController = new CustomerController();
+        customerController = new CustomerController(customerService);
 
         ReflectionTestUtils.setField(
                 customerController, "customerFacade", customerService
