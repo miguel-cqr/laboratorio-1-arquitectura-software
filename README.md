@@ -1,3 +1,11 @@
+[![Quality gate status](https://sonarcloud.io/api/project_badges/measure?project=miguel-cqr_laboratorio-1-arquitectura-software&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=miguel-cqr_laboratorio-1-arquitectura-software)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=miguel-cqr_laboratorio-1-arquitectura-software&metric=coverage)](https://sonarcloud.io/summary/new_code?id=miguel-cqr_laboratorio-1-arquitectura-software)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=miguel-cqr_laboratorio-1-arquitectura-software&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=miguel-cqr_laboratorio-1-arquitectura-software)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=miguel-cqr_laboratorio-1-arquitectura-software&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=miguel-cqr_laboratorio-1-arquitectura-software)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=miguel-cqr_laboratorio-1-arquitectura-software&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=miguel-cqr_laboratorio-1-arquitectura-software)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=miguel-cqr_laboratorio-1-arquitectura-software&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=miguel-cqr_laboratorio-1-arquitectura-software)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=miguel-cqr_laboratorio-1-arquitectura-software&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=miguel-cqr_laboratorio-1-arquitectura-software)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=miguel-cqr_laboratorio-1-arquitectura-software&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=miguel-cqr_laboratorio-1-arquitectura-software)
 # Laboratorio N.º 1 — Introducción a Spring Boot
 
 Aplicación web desarrollada para el Laboratorio N.º 1 de Arquitectura de Software. El proyecto permite gestionar información de clientes y realizar operaciones bancarias mediante la integración de un backend desarrollado con Spring Boot y un frontend desarrollado con React.
