@@ -1,14 +1,14 @@
-# Etapa 1: compilar la aplicación
+# Etapa 1: compilar
 FROM maven:3.9-eclipse-temurin-17 AS build
 
 WORKDIR /app
 
-COPY pom.xml .
-COPY src ./src
+COPY lab1arq/pom.xml .
+COPY lab1arq/src ./src
 
 RUN mvn clean package -DskipTests
 
-# Etapa 2: ejecutar la aplicación
+# Etapa 2: ejecutar
 FROM eclipse-temurin:17-jre
 
 WORKDIR /app
