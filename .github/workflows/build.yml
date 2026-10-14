@@ -136,3 +136,23 @@ jobs:
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+  deploy:
+      name: Deploy a Render
+      needs: build
+      runs-on: ubuntu-latest
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      steps:
+        - name: Trigger Render deploy hook
+          run: curl -fsS -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
+
+        - name: Smoke test
+          env:
+            APP_URL: ${{ secrets.RENDER_APP_URL }}
+          run: |
+            for i in $(seq 1 20); do
+              code=$(curl -s -o /dev/null -w "%{http_code}" "$APP_URL/api/customers" || true)
+              echo "Intento $i: HTTP $code"
+              [ "$code" = "200" ] && exit 0
+              sleep 15
+            done
+            echo "El servicio no respondió a tiempo"; exit 1
