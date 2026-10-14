@@ -1,7 +1,7 @@
 package com.udea.lab1arq.controller;
 
 
-import com.udea.lab1arq.DTO.TransactionDTO;
+import com.udea.lab1arq.dto.TransactionDTO;
 import com.udea.lab1arq.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,12 +13,15 @@ import java.util.List;
 @RequestMapping(value="/api/transactions", produces = "application/json")
 public class TransactionController {
 
-    @Autowired
     private TransactionService transactionService;
 
+    @Autowired
+    public TransactionController(TransactionService transactionService) {
+        this.transactionService = transactionService;
+    }
 
     @PostMapping
-    public ResponseEntity<?> transferMoney(@RequestBody TransactionDTO transactionDTO) {
+    public ResponseEntity<Object> transferMoney(@RequestBody TransactionDTO transactionDTO) {
         try {
             TransactionDTO savedTransaction = transactionService.transferMoney(transactionDTO);
             return ResponseEntity.ok(savedTransaction);

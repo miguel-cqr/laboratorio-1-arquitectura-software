@@ -1,6 +1,6 @@
 package com.udea.lab1arq.service;
 
-import com.udea.lab1arq.DTO.TransactionDTO;
+import com.udea.lab1arq.dto.TransactionDTO;
 import com.udea.lab1arq.entity.Customer;
 import com.udea.lab1arq.entity.Transaction;
 import com.udea.lab1arq.repository.CustomerRepository;
@@ -14,11 +14,14 @@ import java.util.stream.Collectors;
 @Service
 public class TransactionService {
 
-    @Autowired
     private TransactionRepository transactionRepository;
+    private CustomerRepository customerRepository; // Para validar cuentas
 
     @Autowired
-    private CustomerRepository customerRepository; // Para validar cuentas
+    public TransactionService(TransactionRepository transactionRepository, CustomerRepository customerRepository) {
+        this.transactionRepository = transactionRepository;
+        this.customerRepository = customerRepository;
+    }
 
     public TransactionDTO transferMoney(TransactionDTO transactionDTO) {
         // Validar que los números de cuenta no sean nulos
@@ -31,11 +34,10 @@ public class TransactionService {
                 .orElseThrow(() -> new IllegalArgumentException("La cuenta del remitente no existe."));
         Customer receiver = customerRepository.findByAccountNumber(transactionDTO.getReceiverAccountNumber())
                 .orElseThrow(() -> new IllegalArgumentException("La cuenta del receptor no existe."));
-//    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Sender not found"));
+
         // Validar que el remitente tenga saldo suficiente
         if (sender.getBalance() < transactionDTO.getAmount()) {
             throw new IllegalArgumentException("Saldo insuficiente en la cuenta del remitente.");
-            //throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Insufficient balance");
         }
 
         // Realizar la transferencia
@@ -77,6 +79,6 @@ public class TransactionService {
             dto.setAmount(transaction.getAmount());
             dto.setTimestamp(transaction.getTimestamp());
             return dto;
-        }).collect(Collectors.toList());
+        }).toList();
     }
 }

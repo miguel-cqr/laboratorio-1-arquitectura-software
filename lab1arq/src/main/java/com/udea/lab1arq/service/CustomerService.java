@@ -1,6 +1,6 @@
 package com.udea.lab1arq.service;
 
-import com.udea.lab1arq.DTO.CustomerDTO;
+import com.udea.lab1arq.dto.CustomerDTO;
 import com.udea.lab1arq.entity.Customer;
 import com.udea.lab1arq.mapper.CustomerMapper;
 import com.udea.lab1arq.repository.CustomerRepository;
