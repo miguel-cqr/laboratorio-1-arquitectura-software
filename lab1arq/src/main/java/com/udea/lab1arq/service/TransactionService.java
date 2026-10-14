@@ -38,7 +38,6 @@ public class TransactionService {
         // Validar que el remitente tenga saldo suficiente
         if (sender.getBalance() < transactionDTO.getAmount()) {
             throw new IllegalArgumentException("Saldo insuficiente en la cuenta del remitente.");
-            //throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Insufficient balance");
         }
 
         // Realizar la transferencia
